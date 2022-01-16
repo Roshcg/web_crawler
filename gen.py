@@ -22,9 +22,9 @@ def create_data_file(project_name, base_url):
 
     queue = os.path.join(project_name, 'queue.txt')
     crawled = os.path.join(project_name, 'crawled.txt')
-    if os.path.isfile(queue):
+    if not os.path.isfile(queue):
         write_file(queue, base_url)
-    if os.path.isfile(crawled):
+    if not os.path.isfile(crawled):
         write_file(crawled, '')
 
 
